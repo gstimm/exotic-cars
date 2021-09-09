@@ -1,0 +1,356 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "brand": "Ferrari",
+      "model": "California",
+      "price": 725,
+      "main_image_url": "https://imgur.com/N20hhKU.png",
+      "brand_logo_url": "https://imgur.com/v6pOPIH.png",
+      "options": [
+        {
+          "color": "red",
+          "image_url": "https://imgur.com/uxYW4YY.png"
+        },
+        {
+          "color": "yellow",
+          "image_url": "https://imgur.com/Rx8fe8m.png"
+        },
+        {
+          "color": "gray",
+          "image_url": "https://imgur.com/ok8PfRO.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "brand": "Alfa Romeo",
+      "model": "4C Spider",
+      "price": 725,
+      "main_image_url": "https://imgur.com/1Blu1V0.png",
+      "brand_logo_url": "https://imgur.com/IIAPlP2.png",
+      "options": [
+        {
+          "color": "red",
+          "image_url": "https://imgur.com/3mNQ5ae.png"
+        },
+        {
+          "color": "yellow",
+          "image_url": "https://imgur.com/Bs1o4HM.png"
+        },
+        {
+          "color": "black",
+          "image_url": "https://imgur.com/Ld1HP6N.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "brand": "Audi",
+      "model": "R8",
+      "price": 725,
+      "main_image_url": "https://imgur.com/eneoPe7.png",
+      "brand_logo_url": "https://imgur.com/VUn9MX7.png",
+      "options": [
+        {
+          "color": "red",
+          "image_url": "https://imgur.com/AzNNISn.png"
+        },
+        {
+          "color": "gray",
+          "image_url": "https://imgur.com/qRuVUeL.png"
+        },
+        {
+          "color": "black",
+          "image_url": "https://imgur.com/jfbXII6.png"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "brand": "Bentley",
+      "model": "Continental GT",
+      "price": 725,
+      "main_image_url": "https://imgur.com/bJ5W5YT.png",
+      "brand_logo_url": "https://imgur.com/BkINebw.png",
+      "options": [
+        {
+          "color": "cyan",
+          "image_url": "https://imgur.com/ypjSFLQ.png"
+        },
+        {
+          "color": "gray",
+          "image_url": "https://imgur.com/KZQ3sf6.png"
+        },
+        {
+          "color": "black",
+          "image_url": "https://imgur.com/kPNbmUv.png"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "brand": "BMW",
+      "model": "320i",
+      "price": 725,
+      "main_image_url": "https://imgur.com/ExO5zEb.png",
+      "brand_logo_url": "https://imgur.com/tcpyCQJ.png",
+      "options": [
+        {
+          "color": "white",
+          "image_url": "https://imgur.com/kxJGKJc.png"
+        },
+        {
+          "color": "red",
+          "image_url": "https://imgur.com/IyAMwDh.png"
+        },
+        {
+          "color": "blue",
+          "image_url": "https://imgur.com/b9ORasJ.png"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "brand": "Bugatti",
+      "model": "Veyron",
+      "price": 725,
+      "main_image_url": "https://imgur.com/NaeEW4Z.png",
+      "brand_logo_url": "https://imgur.com/DQpyREW.png",
+      "options": [
+        {
+          "color": "blue",
+          "image_url": "https://imgur.com/OMXizo6.png"
+        },
+        {
+          "color": "red",
+          "image_url": "https://imgur.com/n6rf7OW.png"
+        },
+        {
+          "color": "black",
+          "image_url": "https://imgur.com/XI6gB5h.png"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "brand": "Chevrolet",
+      "model": "Corvetti",
+      "price": 725,
+      "main_image_url": "https://imgur.com/vhAUhuX.png",
+      "brand_logo_url": "https://imgur.com/Cl8HkPZ.png",
+      "options": [
+        {
+          "color": "white",
+          "image_url": "https://imgur.com/JWWZ9Fk.png"
+        },
+        {
+          "color": "red",
+          "image_url": "https://imgur.com/EknBlCu.png"
+        },
+        {
+          "color": "black",
+          "image_url": "https://imgur.com/LP3kEEi.png"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "brand": "Ferrari",
+      "model": "458",
+      "price": 725,
+      "main_image_url": "https://imgur.com/Zqt3TzB.png",
+      "brand_logo_url": "https://imgur.com/v6pOPIH.png",
+      "options": [
+        {
+          "color": "white",
+          "image_url": "https://imgur.com/bcOr2Cs.png"
+        },
+        {
+          "color": "red",
+          "image_url": "https://imgur.com/0BGibca.png"
+        },
+        {
+          "color": "black",
+          "image_url": "https://imgur.com/fFeWdny.png"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "brand": "Lamborghini",
+      "model": "Aventador",
+      "price": 725,
+      "main_image_url": "https://imgur.com/0HxvAeP.png",
+      "brand_logo_url": "https://imgur.com/BV9eHEr.png",
+      "options": [
+        {
+          "color": "orange",
+          "image_url": "https://imgur.com/lBFiygR.png"
+        },
+        {
+          "color": "red",
+          "image_url": "https://imgur.com/0rHgcog.png"
+        },
+        {
+          "color": "green",
+          "image_url": "https://imgur.com/cHKNvOJ.png"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "brand": "McLaren",
+      "model": "570s",
+      "price": 725,
+      "main_image_url": "https://imgur.com/SGdvSRS.png",
+      "brand_logo_url": "https://imgur.com/zyYfikO.png",
+      "options": [
+        {
+          "color": "orange",
+          "image_url": "https://imgur.com/OJS8hDo.png"
+        },
+        {
+          "color": "red",
+          "image_url": "https://imgur.com/muclsn9.png"
+        },
+        {
+          "color": "brown",
+          "image_url": "https://imgur.com/9DP6z7W.png"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "brand": "Mercedes Benz",
+      "model": "AMG GT",
+      "price": 725,
+      "main_image_url": "https://imgur.com/TPZnmik.png",
+      "brand_logo_url": "https://imgur.com/dV4Zbwf.png",
+      "options": [
+        {
+          "color": "white",
+          "image_url": "https://imgur.com/jAOL8ZY.png"
+        },
+        {
+          "color": "yellow",
+          "image_url": "https://imgur.com/u2okbc4.png"
+        },
+        {
+          "color": "gray",
+          "image_url": "https://imgur.com/HLseG2d.png"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "brand": "Porsche",
+      "model": "911",
+      "price": 725,
+      "main_image_url": "https://imgur.com/4lNBX0i.png",
+      "brand_logo_url": "https://imgur.com/vm63SdA.png",
+      "options": [
+        {
+          "color": "orange",
+          "image_url": "https://imgur.com/JK2XS89.png"
+        },
+        {
+          "color": "red",
+          "image_url": "https://imgur.com/lW7xRjR.png"
+        },
+        {
+          "color": "green",
+          "image_url": "https://imgur.com/WL9NyQQ.png"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "brand": "Porsche",
+      "model": "Cayman",
+      "price": 725,
+      "main_image_url": "https://imgur.com/MVfcxys.png",
+      "brand_logo_url": "https://imgur.com/vm63SdA.png",
+      "options": [
+        {
+          "color": "red",
+          "image_url": "https://imgur.com/sbTHFl9.png"
+        },
+        {
+          "color": "blue",
+          "image_url": "https://imgur.com/ozB2kgB.png"
+        },
+        {
+          "color": "yellow",
+          "image_url": "https://imgur.com/gjZQCYk.png"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "brand": "Porsche",
+      "model": "Taycan",
+      "price": 725,
+      "main_image_url": "https://imgur.com/K4o7NqY.png",
+      "brand_logo_url": "https://imgur.com/vm63SdA.png",
+      "options": [
+        {
+          "color": "white",
+          "image_url": "https://imgur.com/ykVKtKf.png"
+        },
+        {
+          "color": "blue",
+          "image_url": "https://imgur.com/ZmQqFo3.png"
+        },
+        {
+          "color": "black",
+          "image_url": "https://imgur.com/XKD2Kgj.png"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "brand": "Rolls Royce",
+      "model": "Wraith",
+      "price": 725,
+      "main_image_url": "https://imgur.com/018Dtrr.png",
+      "brand_logo_url": "https://imgur.com/vm63SdA.png",
+      "options": [
+        {
+          "color": "red",
+          "image_url": "https://imgur.com/POTJLRE.png"
+        },
+        {
+          "color": "brown",
+          "image_url": "https://imgur.com/zXVpeL9.png"
+        },
+        {
+          "color": "black",
+          "image_url": "https://imgur.com/wGJfGL8.png"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "brand": "Tesla",
+      "model": "Model 3",
+      "price": 725,
+      "main_image_url": "https://imgur.com/KEe5peM.png",
+      "brand_logo_url": "https://imgur.com/EbjuAEr.png",
+      "options": [
+        {
+          "color": "white",
+          "image_url": "https://imgur.com/9gUcBUa.png"
+        },
+        {
+          "color": "red",
+          "image_url": "https://imgur.com/U5Bvfm4.png"
+        },
+        {
+          "color": "gray",
+          "image_url": "https://imgur.com/X9uSNag.png"
+        }
+      ]
+    }
+  ]
+}
