@@ -47,6 +47,8 @@ export const SearchDiv = styled.div`
     margin-right: 3px;
 
     cursor: pointer;
+
+    box-shadow: 0px 3px 15px #00000014;
   }
 `;
 
