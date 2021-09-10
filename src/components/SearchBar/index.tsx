@@ -1,6 +1,6 @@
 import 'react-calendar/dist/Calendar.css';
 
-import { CalendarsDiv, SearchDiv } from './styles';
+import { CalendarsDiv, DatesDiv, FindDiv, SearchDiv } from './styles';
 import React, { useEffect, useState } from 'react';
 
 import Calendar from 'react-calendar';
@@ -25,7 +25,7 @@ const SearchBar = () => {
       <SearchDiv>
         <Image src='/assets/map_pin.svg' alt='Map Pin' width={18} height={18} />
         <span>North Carolina, NC 90025</span>
-        <div className='dates'>
+        <DatesDiv>
           <div onClick={handleViewFirstCalendar}>
             <Image
               src='/assets/calendar.svg'
@@ -56,15 +56,15 @@ const SearchBar = () => {
               })}
             </span>
           </div>
-        </div>
-        <div className='search'>
+        </DatesDiv>
+        <FindDiv>
           <Image
             src='/assets/search.svg'
             alt='Map Pin'
             width={18}
             height={18}
           />
-        </div>
+        </FindDiv>
       </SearchDiv>
       <CalendarsDiv>
         {viewFirstCalendar && (

@@ -19,39 +19,40 @@ export const SearchDiv = styled.div`
     color: var(--gray-500);
     margin-left: 8px;
   }
-
-  .dates {
-    margin-left: auto;
-    width: 200px;
-    display: flex;
-    justify-content: space-between;
-
-    div {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-    }
-  }
-
-  .search {
-    width: 30px;
-    height: 30px;
-    background: var(--white);
-    border-radius: 30px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-left: auto;
-    margin-right: 3px;
-
-    cursor: pointer;
-
-    box-shadow: 0px 3px 15px #00000014;
-  }
 `;
 
 export const CalendarsDiv = styled.div`
   display: flex;
+  z-index: 100;
+`;
+
+export const DatesDiv = styled.div`
+  margin-left: auto;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+`;
+
+export const FindDiv = styled.div`
+  width: 30px;
+  height: 30px;
+  background: var(--white);
+  border-radius: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: auto;
+  margin-right: 3px;
+
+  cursor: pointer;
+
+  box-shadow: 0px 3px 15px #00000014;
 `;

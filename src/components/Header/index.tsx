@@ -1,6 +1,7 @@
 import {
   HeaderContainer,
   HeaderContent,
+  Logo,
   SignInButton,
   SignUpButton,
 } from './styles';
@@ -12,10 +13,10 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <div className='logo'>
+        <Logo>
           <h1>EXOTIC</h1>
           <h2>CARS</h2>
-        </div>
+        </Logo>
         <SearchBar />
         <div>
           <SignUpButton>Sign up</SignUpButton>
