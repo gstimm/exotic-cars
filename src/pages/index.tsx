@@ -1,16 +1,11 @@
-import CarCard from '../components/CarCard';
 import Header from '../components/Header';
+import HomeComponent from '../components/Home';
 
 export default function Home() {
   return (
     <>
       <Header />
-      <CarCard
-        brand='Lorem'
-        model='Ipsum'
-        price={999}
-        main_image_url='https://imgur.com/eneoPe7.png'
-      />
+      <HomeComponent />
     </>
   );
 }

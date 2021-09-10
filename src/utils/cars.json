@@ -92,7 +92,7 @@
       "id": 5,
       "brand": "BMW",
       "model": "320i",
-      "price": 725,
+      "price": 825,
       "main_image_url": "https://imgur.com/ExO5zEb.png",
       "brand_logo_url": "https://imgur.com/tcpyCQJ.png",
       "options": [
@@ -114,7 +114,7 @@
       "id": 6,
       "brand": "Bugatti",
       "model": "Veyron",
-      "price": 725,
+      "price": 825,
       "main_image_url": "https://imgur.com/NaeEW4Z.png",
       "brand_logo_url": "https://imgur.com/DQpyREW.png",
       "options": [
@@ -136,7 +136,7 @@
       "id": 7,
       "brand": "Chevrolet",
       "model": "Corvetti",
-      "price": 725,
+      "price": 825,
       "main_image_url": "https://imgur.com/vhAUhuX.png",
       "brand_logo_url": "https://imgur.com/Cl8HkPZ.png",
       "options": [
@@ -158,7 +158,7 @@
       "id": 8,
       "brand": "Ferrari",
       "model": "458",
-      "price": 725,
+      "price": 825,
       "main_image_url": "https://imgur.com/Zqt3TzB.png",
       "brand_logo_url": "https://imgur.com/v6pOPIH.png",
       "options": [
@@ -180,7 +180,7 @@
       "id": 9,
       "brand": "Lamborghini",
       "model": "Aventador",
-      "price": 725,
+      "price": 925,
       "main_image_url": "https://imgur.com/0HxvAeP.png",
       "brand_logo_url": "https://imgur.com/BV9eHEr.png",
       "options": [
@@ -202,7 +202,7 @@
       "id": 10,
       "brand": "McLaren",
       "model": "570s",
-      "price": 725,
+      "price": 925,
       "main_image_url": "https://imgur.com/SGdvSRS.png",
       "brand_logo_url": "https://imgur.com/zyYfikO.png",
       "options": [
@@ -224,7 +224,7 @@
       "id": 11,
       "brand": "Mercedes Benz",
       "model": "AMG GT",
-      "price": 725,
+      "price": 925,
       "main_image_url": "https://imgur.com/TPZnmik.png",
       "brand_logo_url": "https://imgur.com/dV4Zbwf.png",
       "options": [
@@ -246,7 +246,7 @@
       "id": 12,
       "brand": "Porsche",
       "model": "911",
-      "price": 725,
+      "price": 925,
       "main_image_url": "https://imgur.com/4lNBX0i.png",
       "brand_logo_url": "https://imgur.com/vm63SdA.png",
       "options": [
