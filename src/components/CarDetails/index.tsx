@@ -1,13 +1,17 @@
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import {
+  Button,
   CarImage,
+  ColorDiv,
   Container,
   Content,
   Infos,
   LeftSide,
   LogoImage,
-  RightSide,
+  MainDiv,
 } from './styles';
 
+import Image from 'next/image';
 import React from 'react';
 import cars from '../../utils/cars.json';
 
@@ -30,13 +34,32 @@ const CarDetails = () => {
               <span>$725/day</span>
             </div>
           </LeftSide>
-          <RightSide>
+        </Infos>
+        <MainDiv>
+          <Button background='transparent' color='#313136'>
+            <Image
+              src='/assets/arrow_left_gray.svg'
+              alt='Arrow Left'
+              width='42px'
+              height='16px'
+            />
+            Back to catalog
+          </Button>
+          <CarImage url='https://imgur.com/uxYW4YY.png' />
+          <ColorDiv>
             <h2>01</h2>
             <span>Red</span>
-          </RightSide>
-        </Infos>
-
-        <CarImage url='https://imgur.com/uxYW4YY.png' />
+          </ColorDiv>
+        </MainDiv>
+        <Button background='#313136' color='#fff' margin='0 auto'>
+          Book now
+          <Image
+            src='/assets/arrow_right.svg'
+            alt='Arrow Left'
+            width='42px'
+            height='16px'
+          />
+        </Button>
       </Content>
     </Container>
   );

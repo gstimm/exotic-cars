@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.div`
   height: 5.1875rem;
   box-shadow: 0px 10px 30px #0000001a;
-  margin-bottom: 22px;
+  padding-bottom: 22px;
 `;
 
 export const HeaderContent = styled.div`

@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   min-height: calc(100vh - 5.1875rem);
+
+  padding-top: 22px;
 `;
 
 export const Content = styled.div`
