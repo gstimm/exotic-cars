@@ -12,10 +12,12 @@ interface ButtonProps {
   background: string;
   color: string;
   margin?: string;
+  padding?: string;
 }
 
 export const Container = styled.div`
   min-height: calc(100vh - 5.1875rem);
+  height: 2000px;
   background: transparent linear-gradient(125deg, #ffffff 0%, #d8d7d7 100%) 0%
     0% no-repeat padding-box;
   padding-top: 31px;
@@ -75,7 +77,7 @@ export const Button = styled.button<ButtonProps>`
   border: 1px solid var(--gray-800);
   border-radius: 50px;
 
-  padding: 0 17px;
+  padding: ${props => props.padding};
   margin: ${props => props.margin};
 
   background: ${props => props.background};
@@ -92,11 +94,11 @@ export const MainDiv = styled.div`
   height: 408px;
   width: 100%;
 
-  position: relative;
-  /* top: -100px; */
+  /* position: relative;
+  top: -100px; */
 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 `;
 
@@ -104,6 +106,10 @@ export const ColorDiv = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: auto;
+
+  position: relative;
+  top: 100px;
+  right: 100px;
 
   h2 {
     font-size: 3.125rem;

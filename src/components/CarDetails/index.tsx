@@ -1,4 +1,3 @@
-import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import {
   Button,
   CarImage,
@@ -13,6 +12,7 @@ import {
 
 import Image from 'next/image';
 import React from 'react';
+import Slider from '../Slider';
 import cars from '../../utils/cars.json';
 
 interface CarProps {
@@ -34,9 +34,13 @@ const CarDetails = () => {
               <span>$725/day</span>
             </div>
           </LeftSide>
+          <ColorDiv>
+            <h2>01</h2>
+            <span>Red</span>
+          </ColorDiv>
         </Infos>
         <MainDiv>
-          <Button background='transparent' color='#313136'>
+          <Button background='transparent' color='#313136' padding='0 17px'>
             <Image
               src='/assets/arrow_left_gray.svg'
               alt='Arrow Left'
@@ -46,12 +50,13 @@ const CarDetails = () => {
             Back to catalog
           </Button>
           <CarImage url='https://imgur.com/uxYW4YY.png' />
-          <ColorDiv>
-            <h2>01</h2>
-            <span>Red</span>
-          </ColorDiv>
         </MainDiv>
-        <Button background='#313136' color='#fff' margin='0 auto'>
+        <Button
+          background='#313136'
+          color='#fff'
+          margin='0 auto 43px'
+          padding='0 33px'
+        >
           Book now
           <Image
             src='/assets/arrow_right.svg'
@@ -60,6 +65,7 @@ const CarDetails = () => {
             height='16px'
           />
         </Button>
+        <Slider />
       </Content>
     </Container>
   );
