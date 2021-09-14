@@ -1,4 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface ItemProps {
+  isSelected: boolean;
+}
+
+interface CarProps extends ItemProps {
+  url: string;
+}
 
 export const Container = styled.div`
   width: 100%;
@@ -8,20 +16,33 @@ export const Container = styled.div`
   align-items: flex-end;
 `;
 
-export const Item = styled.div`
-  height: 179px;
-  width: 301px;
-  border-radius: 16px;
+export const Item = styled.div<ItemProps>`
+  height: ${props => (props.isSelected ? '240px' : '179px')};
+  width: ${props => (props.isSelected ? '380px' : '301px')};
 
-  background: linear-gradient(
-    to right,
-    rgba(200, 200, 202, 1),
-    rgba(200, 200, 202, 0.3)
-  );
+  .background {
+    border-radius: 16px;
+    background: ${props =>
+      props.isSelected
+        ? css`linear-gradient(
+        to right,
+        rgba(47, 47, 180, 0.3),
+        rgba(47, 47, 180, 0.1)
+      )
+      no-repeat`
+        : css`linear-gradient(
+        to right,
+        rgba(200, 200, 202, 1),
+        rgba(200, 200, 202, 0.3)
+      )
+      no-repeat`};
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    z-index: 1;
+    width: 80%;
+    height: 100%;
+
+    margin: 0 auto;
+  }
 `;
 
 export const Button = styled.button`
@@ -37,4 +58,15 @@ export const Button = styled.button`
   justify-content: center;
 
   align-self: center;
+`;
+
+export const CarImage = styled.div<CarProps>`
+  z-index: 10;
+  position: relative;
+
+  top: ${props => (props.isSelected ? '-200px' : '-160px')};
+  width: auto;
+  height: ${props => (props.isSelected ? '200px' : '180px')};
+  background: transparent url(${props => props.url}) 0% 0% no-repeat padding-box;
+  background-size: contain;
 `;

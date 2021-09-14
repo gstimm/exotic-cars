@@ -23,6 +23,8 @@ interface CarProps {
 }
 
 const CarDetails = () => {
+  const items = cars.cars[0].options;
+
   return (
     <Container>
       <Content>
@@ -65,7 +67,7 @@ const CarDetails = () => {
             height='16px'
           />
         </Button>
-        <Carousel />
+        <Carousel items={items} />
       </Content>
     </Container>
   );

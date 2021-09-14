@@ -1,9 +1,19 @@
-import { Button, Container, Item } from './styles';
+import { Button, CarImage, Container, Item } from './styles';
 
 import Image from 'next/image';
 import React from 'react';
 
-export default function Carousel() {
+type CarOption = {
+  option_id: number;
+  color: string;
+  image_url: string;
+};
+
+interface CarouselProps {
+  items: CarOption[];
+}
+
+export default function Carousel({ items }: CarouselProps) {
   return (
     <Container>
       <Button>
@@ -14,9 +24,18 @@ export default function Carousel() {
           height='16px'
         />
       </Button>
-      <Item />
-      <Item />
-      <Item />
+      {items.map(item => (
+        <Item
+          key={item.option_id}
+          isSelected={item.option_id === 2 ? true : false}
+        >
+          <div className='background' />
+          <CarImage
+            url={item.image_url}
+            isSelected={item.option_id === 2 ? true : false}
+          />
+        </Item>
+      ))}
       <Button>
         <Image
           src='/assets/arrow_right_white.svg'
