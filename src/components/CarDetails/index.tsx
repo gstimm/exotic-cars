@@ -10,9 +10,9 @@ import {
   MainDiv,
 } from './styles';
 
+import Carousel from '../Carousel';
 import Image from 'next/image';
 import React from 'react';
-import Slider from '../Slider';
 import cars from '../../utils/cars.json';
 
 interface CarProps {
@@ -59,13 +59,13 @@ const CarDetails = () => {
         >
           Book now
           <Image
-            src='/assets/arrow_right.svg'
+            src='/assets/arrow_right_white.svg'
             alt='Arrow Left'
             width='42px'
             height='16px'
           />
         </Button>
-        <Slider />
+        <Carousel />
       </Content>
     </Container>
   );
