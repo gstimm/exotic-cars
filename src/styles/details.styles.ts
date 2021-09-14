@@ -31,11 +31,14 @@ export const Content = styled.div`
 `;
 
 export const CarImage = styled.div<CarProps>`
-  width: 783px;
+  width: 900px;
   height: 408px;
   background: transparent url(${props => props.url}) 0% 0% no-repeat padding-box;
-
   background-size: contain;
+
+  top: -100px;
+  position: relative;
+  margin-left: 30px;
 `;
 
 export const LogoImage = styled.div<LogoProps>`
@@ -44,7 +47,7 @@ export const LogoImage = styled.div<LogoProps>`
   height: 123px;
   background: transparent url(${props => props.url}) 0% 0% no-repeat padding-box;
   background-size: contain;
-
+  align-self: center;
   margin-right: 39px;
 `;
 
@@ -91,15 +94,12 @@ export const Button = styled.button<ButtonProps>`
 `;
 
 export const MainDiv = styled.div`
-  height: 408px;
+  height: 300px;
   width: 100%;
-
-  /* position: relative;
-  top: -100px; */
 
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const ColorDiv = styled.div`
@@ -121,5 +121,6 @@ export const ColorDiv = styled.div`
     font-size: 1.875rem;
     line-height: 2.5rem;
     font-weight: 200;
+    text-transform: capitalize;
   }
 `;

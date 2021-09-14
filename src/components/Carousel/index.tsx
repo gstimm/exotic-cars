@@ -1,7 +1,7 @@
 import { Button, CarImage, Container, Item } from './styles';
+import React, { useEffect, useState } from 'react';
 
 import Image from 'next/image';
-import React from 'react';
 
 type CarOption = {
   option_id: number;
@@ -13,10 +13,40 @@ interface CarouselProps {
   items: CarOption[];
 }
 
-export default function Carousel({ items }: CarouselProps) {
+export default function Carousel(props) {
+  const [active, setActive] = useState(1);
+
+  const items = props.items;
+
+  useEffect(() => {
+    props.setCarInfos(items[active]);
+  }, [active]);
+
+  function handleSelectedCar(index: number) {
+    setActive(index);
+  }
+
+  function handleNextCar(index: number) {
+    if (index === items.length - 1) {
+      setActive(0);
+    } else {
+      setActive(index + 1);
+    }
+  }
+
+  function handlePreviousCar(index: number) {
+    if (index === 0) {
+      setActive(items.length - 1);
+    } else {
+      setActive(index - 1);
+    }
+  }
+
+  console.log(active);
+
   return (
     <Container>
-      <Button>
+      <Button onClick={() => handlePreviousCar(active)}>
         <Image
           src='/assets/arrow_left_white.svg'
           alt='Arrow Left'
@@ -24,19 +54,22 @@ export default function Carousel({ items }: CarouselProps) {
           height='16px'
         />
       </Button>
-      {items.map(item => (
-        <Item
+      {items.map((item, index) => (
+        <button
           key={item.option_id}
-          isSelected={item.option_id === 2 ? true : false}
+          onClick={() => handleSelectedCar(index)}
+          className='slide-div'
         >
-          <div className='background' />
-          <CarImage
-            url={item.image_url}
-            isSelected={item.option_id === 2 ? true : false}
-          />
-        </Item>
+          <Item isSelected={index === active ? true : false}>
+            <div className='background' />
+            <CarImage
+              url={item.image_url}
+              isSelected={index === active ? true : false}
+            />
+          </Item>
+        </button>
       ))}
-      <Button>
+      <Button onClick={() => handleNextCar(active)}>
         <Image
           src='/assets/arrow_right_white.svg'
           alt='Arrow Left'

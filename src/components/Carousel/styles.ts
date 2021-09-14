@@ -14,6 +14,13 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
+  .slide-div {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
 `;
 
 export const Item = styled.div<ItemProps>`
