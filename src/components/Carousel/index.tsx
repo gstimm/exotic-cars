@@ -1,4 +1,4 @@
-import { Button, CarImage, Container, Item } from './styles';
+import { Button, CarImage, Container, Content, Item } from './styles';
 import React, { useEffect, useState } from 'react';
 
 import Image from 'next/image';
@@ -14,19 +14,33 @@ interface CarouselProps {
 }
 
 export default function Carousel(props) {
-  const [active, setActive] = useState(1);
+  const originalItems = props.items;
+  let items: CarOption[] = originalItems;
 
-  const items = props.items;
+  const [active, setActive] = useState(1);
+  const [showItems, setShowItems] = useState(
+    items.slice(active - 1, active + 2),
+  );
 
   useEffect(() => {
+    setActive(1);
+    switchIndexes();
     props.setCarInfos(items[active]);
+    setShowItems(items.slice(active - 1, active + 2));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
 
   function handleSelectedCar(index: number) {
-    setActive(index);
+    if (index === active) {
+      return;
+    } else if (index > active) {
+      setActive(active - 1);
+    } else {
+      setActive(active + 1);
+    }
   }
 
-  function handleNextCar(index: number) {
+  function handlePreviousCar(index: number) {
     if (index === items.length - 1) {
       setActive(0);
     } else {
@@ -34,7 +48,7 @@ export default function Carousel(props) {
     }
   }
 
-  function handlePreviousCar(index: number) {
+  function handleNextCar(index: number) {
     if (index === 0) {
       setActive(items.length - 1);
     } else {
@@ -42,7 +56,17 @@ export default function Carousel(props) {
     }
   }
 
-  console.log(active);
+  function switchIndexes() {
+    if (active === 1) {
+      return;
+    } else if (active < 1) {
+      items.push(items.shift());
+    } else if (active > 1) {
+      items.unshift(items.splice(items.length - 1, 1).shift());
+    }
+  }
+
+  console.log(items);
 
   return (
     <Container>
@@ -54,21 +78,23 @@ export default function Carousel(props) {
           height='16px'
         />
       </Button>
-      {items.map((item, index) => (
-        <button
-          key={item.option_id}
-          onClick={() => handleSelectedCar(index)}
-          className='slide-div'
-        >
-          <Item isSelected={index === active ? true : false}>
-            <div className='background' />
-            <CarImage
-              url={item.image_url}
-              isSelected={index === active ? true : false}
-            />
-          </Item>
-        </button>
-      ))}
+      <Content>
+        {showItems.map((item, index) => (
+          <button
+            key={item.option_id}
+            onClick={() => handleSelectedCar(index)}
+            className='slide-div'
+          >
+            <Item isSelected={index === active ? true : false}>
+              <div className='background' />
+              <CarImage
+                url={item.image_url}
+                isSelected={index === active ? true : false}
+              />
+            </Item>
+          </button>
+        ))}
+      </Content>
       <Button onClick={() => handleNextCar(active)}>
         <Image
           src='/assets/arrow_right_white.svg'

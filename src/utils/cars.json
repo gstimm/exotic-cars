@@ -22,6 +22,21 @@
           "option_id": 3,
           "color": "yellow",
           "image_url": "https://imgur.com/Rx8fe8m.png"
+        },
+        {
+          "option_id": 4,
+          "color": "green",
+          "image_url": "https://imgur.com/ok8PfRO.png"
+        },
+        {
+          "option_id": 5,
+          "color": "blue",
+          "image_url": "https://imgur.com/uxYW4YY.png"
+        },
+        {
+          "option_id": 6,
+          "color": "black",
+          "image_url": "https://imgur.com/Rx8fe8m.png"
         }
       ]
     },

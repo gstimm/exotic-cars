@@ -9,11 +9,21 @@ interface CarProps extends ItemProps {
 }
 
 export const Container = styled.div`
+  display: flex;
+
+  width: 100%;
+`;
+
+export const Content = styled.div`
   width: 100%;
   height: 250px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
+  padding: 0 64px;
+
+  overflow: hidden;
 
   .slide-div {
     background: transparent;
