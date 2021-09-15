@@ -9,22 +9,26 @@ type CarOption = {
   image_url: string;
 };
 
+// type MoveSide = 'left' | 'right';
+
 interface CarouselProps {
   items: CarOption[];
+  setCarInfos: (arg0: CarOption) => void;
 }
 
-export default function Carousel(props) {
+export default function Carousel(props: CarouselProps) {
   const originalItems = props.items;
-  let items: CarOption[] = originalItems;
+  let items = originalItems;
 
   const [active, setActive] = useState(1);
   const [showItems, setShowItems] = useState(
     items.slice(active - 1, active + 2),
   );
+  // const [moveSide, setMoveSide] = useState<MoveSide>('left');
 
   useEffect(() => {
-    setActive(1);
     switchIndexes();
+    setActive(1);
     props.setCarInfos(items[active]);
     setShowItems(items.slice(active - 1, active + 2));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -35,7 +39,7 @@ export default function Carousel(props) {
       return;
     } else if (index > active) {
       setActive(active - 1);
-    } else {
+    } else if (index < active) {
       setActive(active + 1);
     }
   }
@@ -57,6 +61,7 @@ export default function Carousel(props) {
   }
 
   function switchIndexes() {
+    console.log('ACTIVE: ' + active);
     if (active === 1) {
       return;
     } else if (active < 1) {
@@ -65,8 +70,6 @@ export default function Carousel(props) {
       items.unshift(items.splice(items.length - 1, 1).shift());
     }
   }
-
-  console.log(items);
 
   return (
     <Container>
@@ -85,11 +88,15 @@ export default function Carousel(props) {
             onClick={() => handleSelectedCar(index)}
             className='slide-div'
           >
-            <Item isSelected={index === active ? true : false}>
+            <Item
+              isSelected={index === active ? true : false}
+              // moveSide={moveSide}
+            >
               <div className='background' />
               <CarImage
                 url={item.image_url}
                 isSelected={index === active ? true : false}
+                // moveSide={moveSide}
               />
             </Item>
           </button>

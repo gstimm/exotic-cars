@@ -38,8 +38,6 @@ interface CarProps {
 const CarDetails = ({ car }: CarProps) => {
   const [carInfos, setCarInfos] = useState<Options>(car.options[1]);
 
-  console.log(carInfos);
-
   return (
     <>
       <Header />

@@ -17,17 +17,16 @@ interface ButtonProps {
 
 export const Container = styled.div`
   min-height: calc(100vh - 5.1875rem);
-  height: 2000px;
   background: transparent linear-gradient(125deg, #ffffff 0%, #d8d7d7 100%) 0%
     0% no-repeat padding-box;
   padding-top: 31px;
+
+  padding-bottom: 57px;
 `;
 
 export const Content = styled.div`
   max-width: 1260px;
   margin: 0 auto;
-
-  margin-bottom: 57px;
 `;
 
 export const CarImage = styled.div<CarProps>`
@@ -105,6 +104,8 @@ export const MainDiv = styled.div`
 export const ColorDiv = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+
   margin-bottom: auto;
 
   position: relative;

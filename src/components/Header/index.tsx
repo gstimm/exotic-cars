@@ -6,6 +6,7 @@ import {
   SignUpButton,
 } from './styles';
 
+import Link from 'next/link';
 import React from 'react';
 import SearchBar from '../SearchBar';
 
@@ -13,10 +14,14 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Logo>
-          <h1>EXOTIC</h1>
-          <h2>CARS</h2>
-        </Logo>
+        <Link href='/' passHref>
+          <a>
+            <Logo>
+              <h1>EXOTIC</h1>
+              <h2>CARS</h2>
+            </Logo>
+          </a>
+        </Link>
         <SearchBar />
         <div>
           <SignUpButton>Sign up</SignUpButton>

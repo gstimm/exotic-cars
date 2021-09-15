@@ -1,7 +1,9 @@
+// import { bounceInLeft, bounceInRight } from 'react-animations';
 import styled, { css } from 'styled-components';
 
 interface ItemProps {
   isSelected: boolean;
+  moveSide?: 'left' | 'right';
 }
 
 interface CarProps extends ItemProps {
@@ -10,7 +12,6 @@ interface CarProps extends ItemProps {
 
 export const Container = styled.div`
   display: flex;
-
   width: 100%;
 `;
 
@@ -33,7 +34,15 @@ export const Content = styled.div`
   }
 `;
 
+// const bounceInLeftAnimation = keyframes`${bounceInLeft}`;
+// const bounceInRightAnimation = keyframes`${bounceInRight}`;
+
 export const Item = styled.div<ItemProps>`
+  /* animation: ${props =>
+    props.moveSide === 'left'
+      ? css`0.5s ${bounceInRightAnimation} `
+      : css`0.5s ${bounceInLeftAnimation} `}; */
+
   height: ${props => (props.isSelected ? '240px' : '179px')};
   width: ${props => (props.isSelected ? '380px' : '301px')};
 
