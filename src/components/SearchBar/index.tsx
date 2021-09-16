@@ -20,52 +20,103 @@ const SearchBar = () => {
     setViewSecondCalendar(!viewSecondCalendar);
   }
 
+  const [showSearchInfos, setShowSearchInfos] = useState(true);
+  const [showOnlyFindDiv, setShowOnlyFindDiv] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener('resize', showOrNot);
+    return function cleanup() {
+      window.removeEventListener('resize', showOrNot);
+    };
+  });
+
+  const showOrNot = () => {
+    if (window.innerWidth > 901) {
+      setShowSearchInfos(true);
+      setShowOnlyFindDiv(false);
+    } else if (window.innerWidth <= 901 && window.innerWidth > 408) {
+      setShowSearchInfos(false);
+      setShowOnlyFindDiv(false);
+    } else if (window.innerWidth <= 408) {
+      setShowSearchInfos(false);
+      setShowOnlyFindDiv(true);
+    }
+  };
+
   return (
     <>
-      <SearchDiv>
-        <Image src='/assets/map_pin.svg' alt='Map Pin' width={18} height={18} />
-        <span>North Carolina, NC 90025</span>
-        <DatesDiv>
-          <div onClick={handleViewFirstCalendar}>
-            <Image
-              src='/assets/calendar.svg'
-              alt='Map Pin'
-              width={18}
-              height={18}
-            />
-            <span>
-              {firstDate.toLocaleDateString('pt-BR', {
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric',
-              })}
-            </span>
-          </div>
-          <div onClick={handleViewSecondCalendar}>
-            <Image
-              src='/assets/calendar.svg'
-              alt='Map Pin'
-              width={18}
-              height={18}
-            />
-            <span>
-              {secondDate.toLocaleDateString('pt-BR', {
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric',
-              })}
-            </span>
-          </div>
-        </DatesDiv>
-        <FindDiv>
+      {showSearchInfos && (
+        <SearchDiv>
           <Image
-            src='/assets/search.svg'
+            src='/assets/map_pin.svg'
             alt='Map Pin'
             width={18}
             height={18}
           />
-        </FindDiv>
-      </SearchDiv>
+          <span>North Carolina, NC 90025</span>
+          <DatesDiv>
+            <div onClick={handleViewFirstCalendar}>
+              <Image
+                src='/assets/calendar.svg'
+                alt='Map Pin'
+                width={18}
+                height={18}
+              />
+              <span>
+                {firstDate.toLocaleDateString('pt-BR', {
+                  day: '2-digit',
+                  month: '2-digit',
+                  year: 'numeric',
+                })}
+              </span>
+            </div>
+            <div onClick={handleViewSecondCalendar}>
+              <Image
+                src='/assets/calendar.svg'
+                alt='Map Pin'
+                width={18}
+                height={18}
+              />
+              <span>
+                {secondDate.toLocaleDateString('pt-BR', {
+                  day: '2-digit',
+                  month: '2-digit',
+                  year: 'numeric',
+                })}
+              </span>
+            </div>
+          </DatesDiv>
+          <FindDiv>
+            <Image
+              src='/assets/search.svg'
+              alt='Map Pin'
+              width={18}
+              height={18}
+            />
+          </FindDiv>
+        </SearchDiv>
+      )}
+
+      {!showSearchInfos && (
+        <SearchDiv style={{ width: 'auto', paddingLeft: '3px' }}>
+          {/* {!showOnlyFindDiv && ( */}
+          <span
+            style={{ margin: '0 1rem', fontSize: '1rem', color: '#a8a8aa' }}
+          >
+            Search
+          </span>
+          {/* )} */}
+          <FindDiv>
+            <Image
+              src='/assets/search.svg'
+              alt='Map Pin'
+              width={18}
+              height={18}
+            />
+          </FindDiv>
+        </SearchDiv>
+      )}
+
       <CalendarsDiv>
         {viewFirstCalendar && (
           <Calendar onChange={setFirstDate} value={firstDate} />

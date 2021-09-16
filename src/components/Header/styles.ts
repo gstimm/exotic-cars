@@ -15,6 +15,78 @@ export const HeaderContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 1220px) {
+    padding: 0 1.5rem;
+  }
+
+  .bm-burger-button {
+    position: relative;
+    width: 36px;
+    height: 30px;
+    right: 0px;
+    top: 0px;
+  }
+
+  .bm-burger-bars {
+    background: #222;
+    border-radius: 4px;
+  }
+
+  .bm-burger-bars-hover {
+    background: #222;
+  }
+
+  .bm-cross {
+    background: #222;
+  }
+
+  .bm-cross-button {
+    height: 36px;
+    width: 36px;
+    margin-top: 20px;
+    margin-right: 10px;
+  }
+
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+    top: 0;
+  }
+
+  .bm-menu {
+    background: var(--gray-300);
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+  }
+
+  .bm-item-list {
+    color: var(--gray-800);
+    padding: 0.8em;
+  }
+
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .bm-item {
+    height: 50px;
+  }
+
+  .menu-item {
+    font-size: 1.5rem;
+    color: var(--gray-500);
+  }
+
+  .menu-logo {
+    margin-top: 0;
+    font-size: 2.5rem;
+
+    span {
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
+  }
 `;
 
 export const SignUpButton = styled.button`

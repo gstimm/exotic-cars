@@ -58,4 +58,19 @@ export const Container = styled.div<CarProps>`
       margin-top: 10px;
     }
   }
+
+  @media (max-width: 600px) and (min-width: 465px) {
+    width: 200px;
+    height: 223px;
+  }
+
+  @media (max-width: 464px) and (min-width: 381px) {
+    width: 170px;
+    height: 223px;
+  }
+
+  @media (max-width: 380px) {
+    width: 157px;
+    height: 223px;
+  }
 `;

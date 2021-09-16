@@ -10,12 +10,28 @@ export const Grid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   column-gap: 24px;
   row-gap: 32px;
+
+  @media (max-width: 1220px) and (min-width: 911px) {
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+  }
+
+  @media (max-width: 910px) and (min-width: 601px) {
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    column-gap: 20px;
+    row-gap: 24px;
+  }
 `;
 
 export const Content = styled.div`
   max-width: 1220px;
   margin: 0 auto;
-  margin-bottom: 57px;
 
   .button-div {
     width: 100px;
@@ -29,5 +45,9 @@ export const Content = styled.div`
       width: 100px;
       height: 100px;
     }
+  }
+
+  @media (max-width: 1220px) {
+    padding: 0 1.5rem;
   }
 `;

@@ -12,6 +12,8 @@ export const SearchDiv = styled.div`
   border-radius: 2.25rem;
   padding-left: 27px;
 
+  margin: 0 1rem;
+
   span {
     font-size: 0.75rem;
     line-height: 36px;
