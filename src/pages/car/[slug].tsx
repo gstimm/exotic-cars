@@ -2,6 +2,7 @@ import {
   Button,
   CarImage,
   CarInfos,
+  CarouselDiv,
   ColorDiv,
   Container,
   Content,
@@ -145,8 +146,10 @@ const CarDetails = ({ car }: CarProps) => {
               />
             </Button>
           </div>
-          <Carousel items={car.options} setCarInfos={setCarInfos} />
         </Content>
+        <CarouselDiv>
+          <Carousel items={car.options} setCarInfos={setCarInfos} />
+        </CarouselDiv>
       </Container>
     </>
   );

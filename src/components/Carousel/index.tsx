@@ -26,11 +26,29 @@ export default function Carousel(props: CarouselProps) {
   );
   // const [moveSide, setMoveSide] = useState<MoveSide>('left');
 
+  const [isMobileScreen, setIsMobileScreen] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('resize', changeLayout);
+    return function cleanup() {
+      window.removeEventListener('resize', changeLayout);
+    };
+  });
+
+  const changeLayout = () => {
+    if (window.innerWidth > 650) {
+      setIsMobileScreen(false);
+    } else {
+      setIsMobileScreen(true);
+    }
+  };
+
   useEffect(() => {
     switchIndexes();
     setActive(1);
     props.setCarInfos(items[active]);
     setShowItems(items.slice(active - 1, active + 2));
+    changeLayout();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
 
@@ -73,14 +91,19 @@ export default function Carousel(props: CarouselProps) {
 
   return (
     <Container>
-      <Button onClick={() => handlePreviousCar(active)}>
-        <Image
-          src='/assets/arrow_left_white.svg'
-          alt='Arrow Left'
-          width='24px'
-          height='16px'
-        />
-      </Button>
+      {!isMobileScreen && (
+        <Button
+          onClick={() => handlePreviousCar(active)}
+          style={{ marginLeft: '1rem' }}
+        >
+          <Image
+            src='/assets/arrow_left_white.svg'
+            alt='Arrow Left'
+            width='24px'
+            height='16px'
+          />
+        </Button>
+      )}
       <Content>
         {showItems.map((item, index) => (
           <button
@@ -102,14 +125,19 @@ export default function Carousel(props: CarouselProps) {
           </button>
         ))}
       </Content>
-      <Button onClick={() => handleNextCar(active)}>
-        <Image
-          src='/assets/arrow_right_white.svg'
-          alt='Arrow Left'
-          width='24px'
-          height='16px'
-        />
-      </Button>
+      {!isMobileScreen && (
+        <Button
+          onClick={() => handleNextCar(active)}
+          style={{ marginRight: '1rem' }}
+        >
+          <Image
+            src='/assets/arrow_right_white.svg'
+            alt='Arrow Left'
+            width='24px'
+            height='16px'
+          />
+        </Button>
+      )}
     </Container>
   );
 }

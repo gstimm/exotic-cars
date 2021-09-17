@@ -13,16 +13,16 @@ interface CarProps extends ItemProps {
 export const Container = styled.div`
   display: flex;
   width: 100%;
+
+  justify-content: center;
 `;
 
 export const Content = styled.div`
   width: 100%;
-  height: 250px;
+  height: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-end;
-
-  padding: 0 64px;
 
   overflow: hidden;
 
@@ -44,7 +44,37 @@ export const Item = styled.div<ItemProps>`
       : css`0.5s ${bounceInLeftAnimation} `}; */
 
   height: ${props => (props.isSelected ? '240px' : '179px')};
-  width: ${props => (props.isSelected ? '380px' : '301px')};
+  width: ${props => (props.isSelected ? '380px' : '283px')};
+
+  @media (max-width: 1120px) and (min-width: 1025px) {
+    height: ${props => (props.isSelected ? '235px' : '174px')};
+    width: ${props => (props.isSelected ? '350px' : '265px')};
+  }
+
+  @media (max-width: 1024px) and (min-width: 951px) {
+    height: ${props => (props.isSelected ? '230px' : '170px')};
+    width: ${props => (props.isSelected ? '320px' : '245px')};
+  }
+
+  @media (max-width: 950px) and (min-width: 901px) {
+    height: ${props => (props.isSelected ? '215px' : '160px')};
+    width: ${props => (props.isSelected ? '285px' : '225px')};
+  }
+
+  @media (max-width: 900px) and (min-width: 841px) {
+    height: ${props => (props.isSelected ? '200px' : '145px')};
+    width: ${props => (props.isSelected ? '260px' : '200px')};
+  }
+
+  @media (max-width: 840px) and (min-width: 768px) {
+    height: ${props => (props.isSelected ? '170px' : '120px')};
+    width: ${props => (props.isSelected ? '200px' : '150px')};
+  }
+
+  @media (max-width: 769px) {
+    height: ${props => (props.isSelected ? '160px' : '110px')};
+    width: ${props => (props.isSelected ? '190px' : '145px')};
+  }
 
   .background {
     border-radius: 16px;
@@ -87,12 +117,35 @@ export const Button = styled.button`
 `;
 
 export const CarImage = styled.div<CarProps>`
-  z-index: 10;
   position: relative;
-
-  top: ${props => (props.isSelected ? '-200px' : '-160px')};
   width: auto;
   height: ${props => (props.isSelected ? '200px' : '180px')};
   background: transparent url(${props => props.url}) 0% 0% no-repeat padding-box;
   background-size: contain;
+
+  top: ${props => (props.isSelected ? '-210px' : '-145px')};
+
+  @media (max-width: 1120px) and (min-width: 1025px) {
+    top: ${props => (props.isSelected ? '-210px' : '-140px')};
+  }
+
+  @media (max-width: 1024px) and (min-width: 951px) {
+    top: ${props => (props.isSelected ? '-200px' : '-135px')};
+  }
+
+  @media (max-width: 950px) and (min-width: 901px) {
+    top: ${props => (props.isSelected ? '-190px' : '-125px')};
+  }
+
+  @media (max-width: 900px) and (min-width: 841px) {
+    top: ${props => (props.isSelected ? '-160px' : '-110px')};
+  }
+
+  @media (max-width: 840px) and (min-width: 768px) {
+    top: ${props => (props.isSelected ? '-130px' : '-90px')};
+  }
+
+  @media (max-width: 769px) {
+    top: ${props => (props.isSelected ? '-120px' : '-80px')};
+  }
 `;

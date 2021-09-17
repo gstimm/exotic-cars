@@ -44,11 +44,40 @@ export const Content = styled.div`
   }
 `;
 
+export const CarouselDiv = styled.div`
+  max-width: 1260px;
+  margin: 0 auto;
+`;
+
 export const CarImage = styled.div<CarProps>`
   width: 900px;
-  height: 408px;
+  height: 450px;
   background: transparent url(${props => props.url}) 0% 0% no-repeat padding-box;
   background-size: contain;
+
+  @media (max-width: 1024px) and (min-width: 769px) {
+    height: 350px;
+  }
+
+  @media (max-width: 768px) and (min-width: 651px) {
+    height: 300px;
+  }
+
+  @media (max-width: 650px) and (min-width: 551px) {
+    height: 250px;
+  }
+
+  @media (max-width: 550px) and (min-width: 426px) {
+    height: 220px;
+  }
+
+  @media (max-width: 425px) and (min-width: 376px) {
+    height: 180px;
+  }
+
+  @media (max-width: 375px) {
+    height: 150px;
+  }
 `;
 
 export const Infos = styled.div`
@@ -92,7 +121,7 @@ export const CarInfos = styled.div`
     }
   }
 
-  @media (max-width: 768px) and (min-width: 425px) {
+  @media (max-width: 768px) and (min-width: 651px) {
     .logo {
       max-width: 80px;
       height: 80px;
@@ -110,7 +139,25 @@ export const CarInfos = styled.div`
     }
   }
 
-  @media (max-width: 425px) and (min-width: 375px) {
+  @media (max-width: 650px) and (min-width: 426px) {
+    .logo {
+      max-width: 65px;
+      height: 65px;
+      margin-right: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+
+    span {
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+    }
+  }
+
+  @media (max-width: 425px) and (min-width: 376px) {
     .logo {
       max-width: 50px;
       height: 50px;
@@ -170,6 +217,8 @@ export const MainDiv = styled.div`
   max-height: 500px;
   width: 100%;
 
+  height: auto;
+
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -180,26 +229,6 @@ export const MainDiv = styled.div`
 
   @media (max-width: 1220px) {
     justify-content: center;
-  }
-
-  @media (max-width: 768px) and (min-width: 651px) {
-    height: 400px;
-  }
-
-  @media (max-width: 650px) and (min-width: 551px) {
-    height: 350px;
-  }
-
-  @media (max-width: 550px) and (min-width: 426px) {
-    height: 280px;
-  }
-
-  @media (max-width: 425px) and (min-width: 376px) {
-    height: 220px;
-  }
-
-  @media (max-width: 375px) {
-    height: 180px;
   }
 `;
 
@@ -226,7 +255,7 @@ export const ColorDiv = styled.div`
     text-transform: capitalize;
   }
 
-  @media (max-width: 768px) and (min-width: 425px) {
+  @media (max-width: 768px) and (min-width: 621px) {
     h2 {
       font-size: 2.5rem;
       line-height: 3rem;
@@ -238,7 +267,7 @@ export const ColorDiv = styled.div`
     }
   }
 
-  @media (max-width: 425px) and (min-width: 375px) {
+  @media (max-width: 620px) and (min-width: 375px) {
     h2 {
       font-size: 1.5rem;
       line-height: 1.8rem;

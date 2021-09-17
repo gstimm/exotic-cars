@@ -99,13 +99,13 @@ const SearchBar = () => {
 
       {!showSearchInfos && (
         <SearchDiv style={{ width: 'auto', paddingLeft: '3px' }}>
-          {/* {!showOnlyFindDiv && ( */}
-          <span
-            style={{ margin: '0 1rem', fontSize: '1rem', color: '#a8a8aa' }}
-          >
-            Search
-          </span>
-          {/* )} */}
+          {!showOnlyFindDiv && (
+            <span
+              style={{ margin: '0 1rem', fontSize: '1rem', color: '#a8a8aa' }}
+            >
+              Search
+            </span>
+          )}
           <FindDiv>
             <Image
               src='/assets/search.svg'
