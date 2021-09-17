@@ -240,6 +240,8 @@ export const ColorDiv = styled.div`
   max-width: 150px;
   margin: 0;
 
+  width: max-content;
+
   margin-left: auto;
 
   h2 {
@@ -253,6 +255,12 @@ export const ColorDiv = styled.div`
     line-height: 2.5rem;
     font-weight: 200;
     text-transform: capitalize;
+  }
+
+  position: relative;
+  top: -50px;
+  @media (max-width: 768px) {
+    top: -30px;
   }
 
   @media (max-width: 768px) and (min-width: 621px) {
