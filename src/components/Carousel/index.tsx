@@ -1,6 +1,7 @@
 import { Button, CarImage, Container, Content, Item } from './styles';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
+import { gsap } from 'gsap';
 import Image from 'next/image';
 
 type CarOption = {
@@ -9,7 +10,7 @@ type CarOption = {
   image_url: string;
 };
 
-// type MoveSide = 'left' | 'right';
+type MoveSide = 'left' | 'right' | '';
 
 interface CarouselProps {
   items: CarOption[];
@@ -17,15 +18,18 @@ interface CarouselProps {
 }
 
 export default function Carousel(props: CarouselProps) {
-  const originalItems = props.items;
-  let items = originalItems;
+  const items = props.items;
 
-  const [active, setActive] = useState(1);
-  const [showItems, setShowItems] = useState(
-    items.slice(active - 1, active + 2),
-  );
-  // const [moveSide, setMoveSide] = useState<MoveSide>('left');
+  const [selected, setSelected] = useState(1);
+  const [lastSelected, setLastSelected] = useState(1);
 
+  const [showItems, setShowItems] = useState({
+    previous: items[0],
+    current: items[1],
+    next: items[2],
+  });
+
+  const [moveSide, setMoveSide] = useState<MoveSide>('');
   const [isMobileScreen, setIsMobileScreen] = useState(false);
 
   useEffect(() => {
@@ -44,58 +48,74 @@ export default function Carousel(props: CarouselProps) {
   };
 
   useEffect(() => {
-    switchIndexes();
-    setActive(1);
-    props.setCarInfos(items[active]);
-    setShowItems(items.slice(active - 1, active + 2));
-    changeLayout();
+    props.setCarInfos(items[selected]);
+
+    if (selected < 0 || selected > items.length - 1) {
+      return;
+    }
+
+    if (selected < lastSelected) {
+      if (selected === 0) {
+        setShowItems({
+          previous: items[items.length - 1],
+          current: items[selected],
+          next: items[selected + 1],
+        });
+      } else {
+        setShowItems({
+          previous: items[selected - 1],
+          current: items[selected],
+          next: items[selected + 1],
+        });
+      }
+    }
+    if (selected > lastSelected) {
+      if (selected === items.length - 1) {
+        setShowItems({
+          previous: items[selected - 1],
+          current: items[selected],
+          next: items[0],
+        });
+      } else {
+        setShowItems({
+          previous: items[selected - 1],
+          current: items[selected],
+          next: items[selected + 1],
+        });
+      }
+    }
+
+    console.log(selected);
+    console.log(lastSelected);
+    setTimeout(() => {
+      setMoveSide('');
+    }, 500);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [active]);
+  }, [selected]);
 
-  function handleSelectedCar(index: number) {
-    if (index === active) {
+  function handlePreviousCar() {
+    if (selected === 0) {
       return;
-    } else if (index > active) {
-      setActive(active - 1);
-    } else if (index < active) {
-      setActive(active + 1);
     }
+    setMoveSide('right');
+    setLastSelected(selected);
+    setSelected(selected - 1);
   }
 
-  function handlePreviousCar(index: number) {
-    if (index === items.length - 1) {
-      setActive(0);
-    } else {
-      setActive(index + 1);
-    }
-  }
-
-  function handleNextCar(index: number) {
-    if (index === 0) {
-      setActive(items.length - 1);
-    } else {
-      setActive(index - 1);
-    }
-  }
-
-  function switchIndexes() {
-    console.log('ACTIVE: ' + active);
-    if (active === 1) {
+  function handleNextCar() {
+    if (selected === items.length - 1) {
       return;
-    } else if (active < 1) {
-      items.push(items.shift());
-    } else if (active > 1) {
-      items.unshift(items.splice(items.length - 1, 1).shift());
     }
+    setMoveSide('left');
+    setLastSelected(selected);
+    setSelected(selected + 1);
   }
 
   return (
     <Container>
       {!isMobileScreen && (
-        <Button
-          onClick={() => handlePreviousCar(active)}
-          style={{ marginLeft: '1rem' }}
-        >
+        <Button onClick={handlePreviousCar} style={{ marginLeft: '1rem' }}>
           <Image
             src='/assets/arrow_left_white.svg'
             alt='Arrow Left'
@@ -104,32 +124,30 @@ export default function Carousel(props: CarouselProps) {
           />
         </Button>
       )}
-      <Content>
-        {showItems.map((item, index) => (
-          <button
-            key={item.option_id}
-            onClick={() => handleSelectedCar(index)}
-            className='slide-div'
-          >
-            <Item
-              isSelected={index === active ? true : false}
-              // moveSide={moveSide}
-            >
-              <div className='background' />
-              <CarImage
-                url={item.image_url}
-                isSelected={index === active ? true : false}
-                // moveSide={moveSide}
-              />
-            </Item>
-          </button>
-        ))}
+
+      <Content moveSide={moveSide}>
+        <button onClick={handlePreviousCar} className='slide-div'>
+          <Item isSelected={false}>
+            <div className='background' />
+            <CarImage url={showItems.previous?.image_url} isSelected={false} />
+          </Item>
+        </button>
+        <button className='slide-div'>
+          <Item isSelected={true}>
+            <div className='background' />
+            <CarImage url={showItems.current?.image_url} isSelected={true} />
+          </Item>
+        </button>
+        <button onClick={handleNextCar} className='slide-div'>
+          <Item isSelected={false}>
+            <div className='background' />
+            <CarImage url={showItems.next?.image_url} isSelected={false} />
+          </Item>
+        </button>
       </Content>
+
       {!isMobileScreen && (
-        <Button
-          onClick={() => handleNextCar(active)}
-          style={{ marginRight: '1rem' }}
-        >
+        <Button onClick={handleNextCar} style={{ marginRight: '1rem' }}>
           <Image
             src='/assets/arrow_right_white.svg'
             alt='Arrow Left'

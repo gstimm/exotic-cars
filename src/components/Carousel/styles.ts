@@ -1,9 +1,12 @@
-// import { bounceInLeft, bounceInRight } from 'react-animations';
-import styled, { css } from 'styled-components';
+import { bounceInLeft, bounceInRight } from 'react-animations';
+import styled, { css, keyframes } from 'styled-components';
 
 interface ItemProps {
   isSelected: boolean;
-  moveSide?: 'left' | 'right';
+}
+
+interface ContentProps {
+  moveSide: 'left' | 'right' | '';
 }
 
 interface CarProps extends ItemProps {
@@ -17,7 +20,7 @@ export const Container = styled.div`
   justify-content: center;
 `;
 
-export const Content = styled.div`
+export const Content = styled.div<ContentProps>`
   width: 100%;
   height: auto;
   display: flex;
@@ -25,6 +28,16 @@ export const Content = styled.div`
   align-items: flex-end;
 
   overflow: hidden;
+
+  /* animation: ${props =>
+    props.moveSide === 'right'
+      ? css`0.5s ${bounceInLeftAnimation} `
+      : css`0.5s ${bounceInRightAnimation} `}; */
+
+  animation: ${({ moveSide }) =>
+    moveSide === 'right' && css`0.5s ${bounceInLeftAnimation}`};
+  animation: ${({ moveSide }) =>
+    moveSide === 'left' && css`0.5s ${bounceInRightAnimation}`};
 
   .slide-div {
     background: transparent;
@@ -34,15 +47,10 @@ export const Content = styled.div`
   }
 `;
 
-// const bounceInLeftAnimation = keyframes`${bounceInLeft}`;
-// const bounceInRightAnimation = keyframes`${bounceInRight}`;
+const bounceInLeftAnimation = keyframes`${bounceInLeft}`;
+const bounceInRightAnimation = keyframes`${bounceInRight}`;
 
 export const Item = styled.div<ItemProps>`
-  /* animation: ${props =>
-    props.moveSide === 'left'
-      ? css`0.5s ${bounceInRightAnimation} `
-      : css`0.5s ${bounceInLeftAnimation} `}; */
-
   height: ${props => (props.isSelected ? '240px' : '179px')};
   width: ${props => (props.isSelected ? '380px' : '283px')};
 
