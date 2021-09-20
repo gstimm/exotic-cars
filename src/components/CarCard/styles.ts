@@ -69,8 +69,13 @@ export const Container = styled.div<CarProps>`
     height: 223px;
   }
 
-  @media (max-width: 380px) {
+  @media (max-width: 380px) and (min-width: 321px) {
     width: 157px;
+    height: 223px;
+  }
+
+  @media (max-width: 320px) {
+    width: 140px;
     height: 223px;
   }
 `;

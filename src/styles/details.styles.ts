@@ -259,6 +259,7 @@ export const ColorDiv = styled.div`
 
   position: relative;
   top: -50px;
+
   @media (max-width: 768px) {
     top: -30px;
   }

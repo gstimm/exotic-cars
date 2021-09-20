@@ -24,8 +24,8 @@ export const Grid = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
-    column-gap: 20px;
-    row-gap: 24px;
+    column-gap: 16px;
+    row-gap: 20px;
   }
 `;
 
@@ -49,5 +49,9 @@ export const Content = styled.div`
 
   @media (max-width: 1220px) {
     padding: 0 1.5rem;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 0.875rem;
   }
 `;

@@ -18,6 +18,7 @@ export const Container = styled.div`
   width: 100%;
 
   justify-content: center;
+  overflow: hidden;
 `;
 
 export const Content = styled.div<ContentProps>`
@@ -28,11 +29,6 @@ export const Content = styled.div<ContentProps>`
   align-items: flex-end;
 
   overflow: hidden;
-
-  /* animation: ${props =>
-    props.moveSide === 'right'
-      ? css`0.5s ${bounceInLeftAnimation} `
-      : css`0.5s ${bounceInRightAnimation} `}; */
 
   animation: ${({ moveSide }) =>
     moveSide === 'right' && css`0.5s ${bounceInLeftAnimation}`};
