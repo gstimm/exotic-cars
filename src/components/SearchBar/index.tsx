@@ -116,15 +116,6 @@ const SearchBar = () => {
           </FindDiv>
         </SearchDiv>
       )}
-
-      <CalendarsDiv>
-        {viewFirstCalendar && (
-          <Calendar onChange={setFirstDate} value={firstDate} />
-        )}
-        {viewSecondCalendar && (
-          <Calendar onChange={setSecondDate} value={secondDate} />
-        )}
-      </CalendarsDiv>
     </>
   );
 };
