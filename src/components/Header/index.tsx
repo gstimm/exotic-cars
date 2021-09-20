@@ -21,6 +21,13 @@ const Header = () => {
     };
   });
 
+  useEffect(() => {
+    window.addEventListener('resize', showOrNot);
+    return function cleanup() {
+      window.removeEventListener('resize', showOrNot);
+    };
+  }, []);
+
   const showOrNot = () => {
     if (window.innerWidth > 490) {
       setShowBurgerButton(false);

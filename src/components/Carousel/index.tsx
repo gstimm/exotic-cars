@@ -44,14 +44,16 @@ export default function Carousel(props: CarouselProps) {
   useEffect(() => {
     switchIndexes();
     setSelected(1);
-    setShowItems(items.slice(selected - 1, selected + 2));
     setTimeout(() => {
       setMoveSide('');
     }, 500);
     props.setCarInfos(items[selected]);
+    setShowItems(items.slice(selected - 1, selected + 2));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
+
+  console.log(showItems);
 
   function handleSelectedCar(index: number) {
     if (index > selected) {

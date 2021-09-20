@@ -32,6 +32,7 @@ export const Grid = styled.div`
 export const Content = styled.div`
   max-width: 1220px;
   margin: 0 auto;
+  padding-bottom: 50px;
 
   .button-div {
     width: 100px;
