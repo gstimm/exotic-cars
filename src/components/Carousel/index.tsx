@@ -53,8 +53,6 @@ export default function Carousel(props: CarouselProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
 
-  console.log(showItems);
-
   function handleSelectedCar(index: number) {
     if (index > selected) {
       setSelected(selected - 1);
